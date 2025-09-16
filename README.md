@@ -2,9 +2,9 @@
 
 ## DESCRIPTION
 This README outlines three scripts customized to detect and extract Beta bursts parameters, for each subject, using personalized thresholds.
-1. "Amplitude_enveloppe_extraction.m" was created to exctract and normalise amplitude enveloppe for Beta frequency (+/- 3 Hz around subject Beta peak frequency) of each subject, during each session, for each scout (Primary motor cortex (M1) right and left hemispheres). Peak frequancies were previously extracted and scouts extracted using Brainstorm...
-2. "Threshold_estimation.m" was created using square difference to test differents thresholds to find the most representative of beta amplitude variations in each subject. Then it find and applied to all subjects the threshold with the best average correlation between subjects ("global threshold") .
-3. "beta_bursts_parameters_extraction.m" aim is to apply the "global threshold" to the subjects and extract the paramaters of the bursts (temporal localisation, duration, peak amplitude).
+1. "Amplitude_enveloppe_extraction.m" extracts beta-band amplitude envelopes (±3 Hz around each subject’s peak frequency from M1 scouts), normalizes them by the grand mean, and saves trial-wise envelopes for each subject, session, and hemisphere. Peak frequancies were previously extracted and M1 scouts extracted using Brainstorm.
+2. "Threshold_estimation.m" was created to estimate a global threshold for beta burst detection by testing a range of SD multipliers and selecting the one that maximizes the correlation between burst counts and trial mean amplitudes across subjects. The chosen SD is then applied to each subject’s data to compute subject-specific thresholds.
+3. "beta_bursts_parameters_extraction.m" applies the previously determined global threshold to each subject’s beta amplitude envelope and extracts burst parameters, including onset/offset time, peak time, duration, and peak amplitude, saving them for further analysis.
 
 ## SUPPORT
 
